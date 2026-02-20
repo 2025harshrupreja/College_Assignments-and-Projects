@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  jenkins:
+    image: jenkins/jenkins:lts
+    container_name: jenkins_server
+    ports:
+      - "9090:8080"
+      - "50001:50000"
+    volumes:
+      - jenkins_data:/var/jenkins_home
+    restart: always
+
+volumes:
+  jenkins_data:
