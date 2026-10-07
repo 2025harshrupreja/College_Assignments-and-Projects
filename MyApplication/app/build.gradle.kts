@@ -18,8 +18,19 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = rootProject.file("bloodconnect.keystore")
+            storePassword = "blood123"
+            keyAlias = "bloodconnect"
+            keyPassword = "blood123"
+        }
+    }
+
     buildTypes {
         release {
+            isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
             optimization {
                 enable = true
                 packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
