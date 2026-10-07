@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.myapplication.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_RegisterDonor"
+            app:destination="@id/RegisterDonorFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_FindDonor"
+            app:destination="@id/FindDonorFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_BloodBank"
+            app:destination="@id/BloodBankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/RegisterDonorFragment"
+        android:name="com.example.myapplication.fragments.RegisterDonorFragment"
+        android:label="@string/register_donor_label"
+        tools:layout="@layout/fragment_register_donor" />
+
+    <fragment
+        android:id="@+id/FindDonorFragment"
+        android:name="com.example.myapplication.fragments.FindDonorFragment"
+        android:label="@string/find_donor_label"
+        tools:layout="@layout/fragment_find_donor" />
+
+    <fragment
+        android:id="@+id/BloodBankFragment"
+        android:name="com.example.myapplication.fragments.BloodBankFragment"
+        android:label="@string/blood_bank_label"
+        tools:layout="@layout/fragment_blood_bank" />
+</navigation>
